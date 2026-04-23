@@ -35,6 +35,18 @@
     combos {
         compatible = "zmk,combos";
 
+        to-0 {
+            bindings = <&to 0>;
+            key-positions = <7 8>;
+            layers = <5>;
+        };
+
+        to-1 {
+            bindings = <&to 1>;
+            key-positions = <8 9>;
+            layers = <5>;
+        };
+
         vol-up {
             bindings = <&kp C_VOL_UP>;
             key-positions = <8 9>;
@@ -107,6 +119,36 @@
             layers = <0>;
         };
 
+        ctrl-a {
+            bindings = <&kp LC(A)>;
+            key-positions = <14 15 16>;
+            layers = <1>;
+        };
+
+        ctrl-z {
+            bindings = <&kp LC(Z)>;
+            key-positions = <26 27>;
+            layers = <1>;
+        };
+
+        ctrl-x {
+            bindings = <&kp LC(X)>;
+            key-positions = <14 16>;
+            layers = <1>;
+        };
+
+        ctrl-c {
+            bindings = <&kp LC(C)>;
+            key-positions = <14 15>;
+            layers = <1>;
+        };
+
+        ctrl-v {
+            bindings = <&kp LC(V)>;
+            key-positions = <15 16>;
+            layers = <1>;
+        };
+
         cmd-q {
             bindings = <&kp LG(Q)>;
             key-positions = <2 3 4>;
@@ -141,18 +183,6 @@
             bindings = <&kp LS(LG(NUMBER_5))>;
             key-positions = <33 34 35>;
             layers = <0>;
-        };
-
-        to-0 {
-            bindings = <&to 0>;
-            key-positions = <7 8>;
-            layers = <5>;
-        };
-
-        to-1 {
-            bindings = <&to 1>;
-            key-positions = <8 9>;
-            layers = <5>;
         };
     };
 
