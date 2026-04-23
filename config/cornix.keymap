@@ -28,8 +28,8 @@
         compatible = "zmk,conditional-layers";
 
         adjust_layer {
-            if-layers = <3 4>;
-            then-layer = <5>;
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
     };
 
@@ -39,6 +39,7 @@
         cmd-a {
             bindings = <&kp LG(A)>;
             key-positions = <14 15 16>;
+            layers = <0>;
         };
 
         cmd-z {
@@ -160,7 +161,7 @@
         mm_gtab: mm_gtab {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_GTAB";
-            bindings = <&lt 4 LG(SPACE)>, <&lt 4 TAB>;
+            bindings = <&lt 3 LG(SPACE)>, <&lt 3 TAB>;
 
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
@@ -177,7 +178,7 @@
 &mm_esc        &kp Q                &kp L     &kp U           &kp COMMA   &kp DOT                       &kp F            &kp W     &kp R           &kp Y     &kp P     &kp GRAVE
 &mt LGUI TAB   &kp E                &kp I     &kp A           &kp O       &kp MINUS                     &kp K            &kp T     &kp N           &kp S     &kp H     &kp B
 &mt LALT BSLH  &mt LCTRL SEMICOLON  &kp Z     &kp X           &kp C       &kp V      &none  &kp C_MUTE  &kp G            &kp D     &kp M           &kp J     &kp UP    &mt RALT SLASH
-&mo 6          &kp LCTRL            &kp LALT  &mt LGUI LANG2  &lt 3 BSPC  &mm_ime                       &mt RSHFT ENTER  &mm_gtab  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
+&mo 5          &kp LCTRL            &kp LALT  &mt LGUI LANG2  &lt 2 BSPC  &mm_ime                       &mt RSHFT ENTER  &mm_gtab  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
             sensor-bindings =
@@ -186,31 +187,12 @@
         };
 
         win_layer {
-            display-name = "Win";
             bindings = <
-&mm_esc        &kp Q                &kp L     &kp U           &kp COMMA   &kp DOT                       &kp F            &kp W      &kp R           &kp Y     &kp P     &kp GRAVE
-&mt LGUI TAB   &kp E                &kp I     &kp A           &kp O       &kp MINUS                     &kp K            &kp T      &kp N           &kp S     &kp H     &kp B
-&mt LALT BSLH  &mt LCTRL SEMICOLON  &kp Z     &kp X           &kp C       &kp V      &none  &kp C_MUTE  &kp G            &kp D      &kp M           &kp J     &kp UP    &mt RALT SLASH
-&mo 6          &kp LCTRL            &kp LALT  &mt LGUI LANG2  &lt 3 BSPC  &mm_ime                       &mt RSHFT ENTER  &lt 4 TAB  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
             >;
-
-            sensor-bindings =
-                <&inc_dec_kp C_BRI_UP C_BRI_DN>,
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        ipad_layer {
-            display-name = "iPad";
-            bindings = <
-&mm_esc        &kp Q                &kp L     &kp U           &kp COMMA   &kp DOT                       &kp F            &kp W      &kp R           &kp Y     &kp P     &kp GRAVE
-&mt LGUI TAB   &kp E                &kp I     &kp A           &kp O       &kp MINUS                     &kp K            &kp T      &kp N           &kp S     &kp H     &kp B
-&mt LALT BSLH  &mt LCTRL SEMICOLON  &kp Z     &kp X           &kp C       &kp V      &none  &kp C_MUTE  &kp G            &kp D      &kp M           &kp J     &kp UP    &mt RALT SLASH
-&mo 6          &kp LCTRL            &kp LALT  &mt LGUI LANG2  &lt 3 BSPC  &mm_ime                       &mt RSHFT ENTER  &lt 4 TAB  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
-            >;
-
-            sensor-bindings =
-                <&inc_dec_kp C_BRI_UP C_BRI_DN>,
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
@@ -219,7 +201,7 @@
 &trans        &kp LS(SEMICOLON)   &kp SLASH     &kp MINUS     &trans        &trans                        &kp F1        &kp F2           &kp F3        &kp F4        &kp F5        &kp F11
 &mt LGUI F16  &kp NUMBER_1        &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7     &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp F12
 &trans        &mt LCTRL NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans  &trans  &kp F6        &kp F7           &kp F8        &kp F9        &kp F10       &trans
-&trans        &trans              &trans        &trans        &trans        &trans                        &trans        &lt 4 RA(SPACE)  &trans        &trans        &trans        &trans
+&trans        &trans              &trans        &trans        &trans        &trans                        &trans        &lt 3 RA(SPACE)  &trans        &trans        &trans        &trans
             >;
         };
 
@@ -229,7 +211,7 @@
 &trans        &kp LS(NUMBER_6)  &kp LS(NUMBER_5)   &kp LS(NUMBER_4)  &kp LS(COMMA)     &kp LS(DOT)                    &kp LS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp UP    &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp F11
 &mt LGUI F16  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)   &kp LS(NUMBER_3)  &kp LS(EQUAL)     &kp LS(MINUS)                  &kp LS(SEMICOLON)     &kp LEFT          &kp DOWN  &kp RIGHT          &kp EQUAL              &kp SEMICOLON
 &trans        &trans            &kp LS(BACKSLASH)  &kp LS(NUMBER_8)  &kp LS(NUMBER_7)  &kp LS(SLASH)  &trans  &trans  &kp LS(COMMA)         &kp LS(NUMBER_9)  &kp SQT   &kp LS(NUMBER_0)   &kp LS(DOT)            &trans
-&trans        &trans            &trans             &trans            &lt 3 RA(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
+&trans        &trans            &trans             &trans            &lt 2 RA(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
             >;
         };
 
