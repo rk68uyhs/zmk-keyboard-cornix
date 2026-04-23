@@ -38,31 +38,37 @@
         vol-up {
             bindings = <&kp C_VOL_UP>;
             key-positions = <8 9>;
+            layers = <0 1>;
         };
 
         vol-dn {
             bindings = <&kp C_VOL_DN>;
             key-positions = <7 8>;
+            layers = <0 1>;
         };
 
         vol-mute {
             bindings = <&kp C_MUTE>;
             key-positions = <7 8 9>;
+            layers = <0 1>;
         };
 
         bri-up {
             bindings = <&kp C_BRI_UP>;
             key-positions = <34 35>;
+            layers = <0 1>;
         };
 
         bri-dn {
             bindings = <&kp C_BRI_DN>;
             key-positions = <33 34>;
+            layers = <0 1>;
         };
 
         l-enter {
             bindings = <&kp ENTER>;
             key-positions = <3 4>;
+            layers = <0 1>;
         };
 
         cmd-a {
