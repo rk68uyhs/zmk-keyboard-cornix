@@ -9,11 +9,10 @@
 
 #define BASE 0
 #define WIN 1
-#define IPAD 2
-#define LOWER 3
-#define RAISE 4
-#define ADJUST 5
-#define ASSIST 6
+#define LOWER 2
+#define RAISE 3
+#define ADJUST 4
+#define ASSIST 5
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -35,67 +34,6 @@
 
     combos {
         compatible = "zmk,combos";
-
-        cmd-a {
-            bindings = <&kp LG(A)>;
-            key-positions = <14 15 16>;
-            layers = <0>;
-        };
-
-        cmd-z {
-            bindings = <&kp LG(Z)>;
-            key-positions = <26 27>;
-        };
-
-        cmd-x {
-            bindings = <&kp LG(X)>;
-            key-positions = <14 16>;
-        };
-
-        cmd-c {
-            bindings = <&kp LG(C)>;
-            key-positions = <14 15>;
-        };
-
-        cmd-v {
-            bindings = <&kp LG(V)>;
-            key-positions = <15 16>;
-        };
-
-        cmd-w {
-            bindings = <&kp LG(W)>;
-            key-positions = <2 3>;
-        };
-
-        cmd-q {
-            bindings = <&kp LG(Q)>;
-            key-positions = <2 3 4>;
-        };
-
-        l-enter {
-            bindings = <&kp ENTER>;
-            key-positions = <3 4>;
-        };
-
-        ctrl-j {
-            bindings = <&kp LC(J)>;
-            key-positions = <19 20>;
-        };
-
-        ctrl-k {
-            bindings = <&kp LC(K)>;
-            key-positions = <20 21>;
-        };
-
-        ctrl-l {
-            bindings = <&kp LC(L)>;
-            key-positions = <19 20 21>;
-        };
-
-        ctrl-semi {
-            bindings = <&kp LC(SEMI)>;
-            key-positions = <19 21>;
-        };
 
         vol-up {
             bindings = <&kp C_VOL_UP>;
@@ -122,9 +60,81 @@
             key-positions = <33 34>;
         };
 
+        l-enter {
+            bindings = <&kp ENTER>;
+            key-positions = <3 4>;
+        };
+
+        cmd-a {
+            bindings = <&kp LG(A)>;
+            key-positions = <14 15 16>;
+            layers = <0>;
+        };
+
+        cmd-z {
+            bindings = <&kp LG(Z)>;
+            key-positions = <26 27>;
+            layers = <0>;
+        };
+
+        cmd-x {
+            bindings = <&kp LG(X)>;
+            key-positions = <14 16>;
+            layers = <0>;
+        };
+
+        cmd-c {
+            bindings = <&kp LG(C)>;
+            key-positions = <14 15>;
+            layers = <0>;
+        };
+
+        cmd-v {
+            bindings = <&kp LG(V)>;
+            key-positions = <15 16>;
+            layers = <0>;
+        };
+
+        cmd-w {
+            bindings = <&kp LG(W)>;
+            key-positions = <2 3>;
+            layers = <0>;
+        };
+
+        cmd-q {
+            bindings = <&kp LG(Q)>;
+            key-positions = <2 3 4>;
+            layers = <0>;
+        };
+
+        ctrl-j {
+            bindings = <&kp LC(J)>;
+            key-positions = <19 20>;
+            layers = <0>;
+        };
+
+        ctrl-k {
+            bindings = <&kp LC(K)>;
+            key-positions = <20 21>;
+            layers = <0>;
+        };
+
+        ctrl-l {
+            bindings = <&kp LC(L)>;
+            key-positions = <19 20 21>;
+            layers = <0>;
+        };
+
+        ctrl-semi {
+            bindings = <&kp LC(SEMI)>;
+            key-positions = <19 21>;
+            layers = <0>;
+        };
+
         gs5-ss {
             bindings = <&kp LS(LG(NUMBER_5))>;
             key-positions = <33 34 35>;
+            layers = <0>;
         };
     };
 
@@ -187,6 +197,7 @@
         };
 
         win_layer {
+            display-name = "Win";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
