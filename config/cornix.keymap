@@ -161,23 +161,23 @@
             keep-mods = <(MOD_LGUI)>;
         };
 
-        mm_esc_in: mm_esc_in {
+        mm_esc_s: mm_esc_s {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp TILDE>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "MM_ESC_IN";
+            label = "MM_ESC_S";
         };
 
-        mm_esc: mm_esc {
+        mm_esc_g: mm_esc_g {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mm_esc_in>, <&kp GRAVE>;
+            bindings = <&mm_esc_s>, <&kp GRAVE>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
             keep-mods = <(MOD_LGUI|MOD_RGUI)>;
-            label = "MM_ESC";
+            label = "MM_ESC_G";
         };
 
         mm_gtab: mm_gtab {
@@ -189,6 +189,16 @@
             mods = <(MOD_LGUI)>;
             keep-mods = <(MOD_LGUI)>;
         };
+
+        mm_ime_win: mm_ime_win {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_IME_WIN";
+            bindings = <&mt LSHFT SPACE>, <&mt LSHFT SPACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+            keep-mods = <(MOD_LCTL)>;
+        };
     };
 
     keymap {
@@ -197,7 +207,7 @@
         base_layer {
             display-name = "Base";
             bindings = <
-&mm_esc        &kp Q                &kp L     &kp U           &kp COMMA   &kp DOT                       &kp F            &kp W     &kp R           &kp Y     &kp P     &kp GRAVE
+&mm_esc_g      &kp Q                &kp L     &kp U           &kp COMMA   &kp DOT                       &kp F            &kp W     &kp R           &kp Y     &kp P     &kp GRAVE
 &mt LGUI TAB   &kp E                &kp I     &kp A           &kp O       &kp MINUS                     &kp K            &kp T     &kp N           &kp S     &kp H     &kp B
 &mt LALT BSLH  &mt LCTRL SEMICOLON  &kp Z     &kp X           &kp C       &kp V      &none  &kp C_MUTE  &kp G            &kp D     &kp M           &kp J     &kp UP    &mt RALT SLASH
 &mo 5          &kp LCTRL            &kp LALT  &mt LGUI LANG2  &lt 2 BSPC  &mm_ime                       &mt RSHFT ENTER  &mm_gtab  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
@@ -211,30 +221,34 @@
         win_layer {
             display-name = "Win";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&mm_esc_s      &trans              &trans    &trans          &trans  &trans                       &trans  &trans           &trans           &trans  &trans  &trans
+&mt LCTRL TAB  &trans              &trans    &trans          &trans  &trans                       &trans  &trans           &trans           &trans  &trans  &trans
+&trans         &mt LGUI SEMICOLON  &trans    &trans          &trans  &trans       &trans  &trans  &trans  &trans           &trans           &trans  &trans  &trans
+&trans         &kp LCTRL           &kp LGUI  &mt LALT LANG2  &trans  &mm_ime_win                  &trans  &lt 3 LC(SPACE)  &mt RCTRL LANG1  &trans  &trans  &trans
             >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_BRI_UP C_BRI_DN>,
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
             display-name = "Lower";
             bindings = <
-&trans        &kp LS(SEMICOLON)   &kp SLASH     &kp MINUS     &trans        &trans                        &kp F1        &kp F2           &kp F3        &kp F4        &kp F5        &kp F11
-&mt LGUI F16  &kp NUMBER_1        &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7     &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp F12
-&trans        &mt LCTRL NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans  &trans  &kp F6        &kp F7           &kp F8        &kp F9        &kp F10       &trans
-&trans        &trans              &trans        &trans        &trans        &trans                        &trans        &lt 3 RA(SPACE)  &trans        &trans        &trans        &trans
+&trans  &kp LS(SEMICOLON)   &kp SLASH     &kp MINUS     &trans        &trans                        &kp F1        &kp F2           &kp F3        &kp F4        &kp F5        &kp F11
+&trans  &kp NUMBER_1        &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7     &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp F12
+&trans  &mt LCTRL NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans  &trans  &kp F6        &kp F7           &kp F8        &kp F9        &kp F10       &trans
+&trans  &trans              &trans        &trans        &trans        &trans                        &trans        &lt 3 RA(SPACE)  &trans        &trans        &trans        &trans
             >;
         };
 
         raise_layer {
             display-name = "Raise";
             bindings = <
-&trans        &kp LS(NUMBER_6)  &kp LS(NUMBER_5)   &kp LS(NUMBER_4)  &kp LS(COMMA)     &kp LS(DOT)                    &kp LS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp UP    &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp F11
-&mt LGUI F16  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)   &kp LS(NUMBER_3)  &kp LS(EQUAL)     &kp LS(MINUS)                  &kp LS(SEMICOLON)     &kp LEFT          &kp DOWN  &kp RIGHT          &kp EQUAL              &kp SEMICOLON
-&trans        &trans            &kp LS(BACKSLASH)  &kp LS(NUMBER_8)  &kp LS(NUMBER_7)  &kp LS(SLASH)  &trans  &trans  &kp LS(COMMA)         &kp LS(NUMBER_9)  &kp SQT   &kp LS(NUMBER_0)   &kp LS(DOT)            &trans
-&trans        &trans            &trans             &trans            &lt 2 RA(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
+&trans  &kp LS(NUMBER_6)  &kp LS(NUMBER_5)   &kp LS(NUMBER_4)  &kp LS(COMMA)     &kp LS(DOT)                    &kp LS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp UP    &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp F11
+&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)   &kp LS(NUMBER_3)  &kp LS(EQUAL)     &kp LS(MINUS)                  &kp LS(SEMICOLON)     &kp LEFT          &kp DOWN  &kp RIGHT          &kp EQUAL              &kp SEMICOLON
+&trans  &trans            &kp LS(BACKSLASH)  &kp LS(NUMBER_8)  &kp LS(NUMBER_7)  &kp LS(SLASH)  &trans  &trans  &kp LS(COMMA)         &kp LS(NUMBER_9)  &kp SQT   &kp LS(NUMBER_0)   &kp LS(DOT)            &trans
+&trans  &trans            &trans             &trans            &lt 2 RA(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
             >;
         };
 
