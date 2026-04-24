@@ -175,6 +175,11 @@
             key-positions = <33 34 35>;
             layers = <0>;
         };
+
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <11 10>;
+        };
     };
 
     behaviors {
