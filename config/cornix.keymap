@@ -136,7 +136,7 @@
 
         ctrl-w {
             bindings = <&kp LC(V)>;
-            key-positions = <3 4>;
+            key-positions = <3 2>;
             layers = <4>;
         };
 
