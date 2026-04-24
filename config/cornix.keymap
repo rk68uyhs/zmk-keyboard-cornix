@@ -35,37 +35,37 @@
         vol-up {
             bindings = <&kp C_VOL_UP>;
             key-positions = <8 9>;
-            layers = <0>;
+            layers = <0 4>;
         };
 
         vol-dn {
             bindings = <&kp C_VOL_DN>;
             key-positions = <7 8>;
-            layers = <0>;
+            layers = <0 4>;
         };
 
         vol-mute {
             bindings = <&kp C_MUTE>;
             key-positions = <7 8 9>;
-            layers = <0>;
+            layers = <0 4>;
         };
 
         bri-up {
             bindings = <&kp C_BRI_UP>;
             key-positions = <34 35>;
-            layers = <0>;
+            layers = <0 4>;
         };
 
         bri-dn {
             bindings = <&kp C_BRI_DN>;
             key-positions = <33 34>;
-            layers = <0>;
+            layers = <0 4>;
         };
 
         l-enter {
             bindings = <&kp ENTER>;
             key-positions = <3 4>;
-            layers = <0>;
+            layers = <0 4>;
         };
 
         cmd-a {
@@ -107,31 +107,37 @@
         ctrl-a {
             bindings = <&kp LC(A)>;
             key-positions = <14 15 16>;
+            layers = <4>;
         };
 
         ctrl-z {
             bindings = <&kp LC(Z)>;
             key-positions = <26 27>;
+            layers = <4>;
         };
 
         ctrl-x {
             bindings = <&kp LC(X)>;
             key-positions = <14 16>;
+            layers = <4>;
         };
 
         ctrl-c {
             bindings = <&kp LC(C)>;
             key-positions = <14 15>;
+            layers = <4>;
         };
 
         ctrl-v {
             bindings = <&kp LC(V)>;
             key-positions = <15 16>;
+            layers = <4>;
         };
 
         ctrl-w {
             bindings = <&kp LC(V)>;
             key-positions = <3 4>;
+            layers = <4>;
         };
 
         cmd-q {
