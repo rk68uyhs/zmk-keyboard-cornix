@@ -310,7 +310,7 @@
 &trans  &kp LS(NUMBER_6)  &kp LS(NUMBER_5)   &kp LS(NUMBER_4)  &kp LS(COMMA)     &kp LS(DOT)                    &kp LS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp UP    &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &trans
 &trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)   &kp LS(NUMBER_3)  &kp LS(EQUAL)     &kp LS(MINUS)                  &kp LS(SEMICOLON)     &kp LEFT          &kp DOWN  &kp RIGHT          &kp EQUAL              &kp SEMICOLON
 &trans  &trans            &kp LS(BACKSLASH)  &kp LS(NUMBER_8)  &kp LS(NUMBER_7)  &kp LS(SLASH)  &trans  &trans  &kp LS(COMMA)         &kp LS(NUMBER_9)  &kp SQT   &kp LS(NUMBER_0)   &kp LS(DOT)            &trans
-&trans  &trans            &trans             &trans            &lt 1 RC(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
+&trans  &trans            &trans             &trans            &lt 5 RC(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
             >;
         };
 
