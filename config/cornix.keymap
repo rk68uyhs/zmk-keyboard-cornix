@@ -231,6 +231,16 @@
             mods = <(MOD_LCTL)>;
             keep-mods = <(MOD_LCTL)>;
         };
+
+        mm_cgrv_win: mm_cgrv_win {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_CGRV_WIN";
+            bindings = <&kp GRAVE>, <&kp GRAVE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+            keep-mods = <(MOD_LCTL)>;
+        };
     };
 
     keymap {
@@ -283,7 +293,7 @@
         base_layer-win {
             display-name = "Base-WIN";
             bindings = <
-&mm_esc_s      &trans         &trans    &trans          &trans      &trans                       &trans  &trans           &trans           &trans  &trans  &trans
+&mm_esc_s      &trans         &trans    &trans          &trans      &trans                       &trans  &trans           &trans           &trans  &trans  &mm_cgrv_win
 &mt LCTRL TAB  &trans         &trans    &trans          &trans      &trans                       &trans  &trans           &trans           &trans  &trans  &trans
 &trans         &mt LGUI SEMI  &trans    &trans          &trans      &trans       &trans  &trans  &trans  &trans           &trans           &trans  &trans  &trans
 &trans         &trans         &kp LGUI  &mt LALT LANG2  &lt 5 BSPC  &mm_ime_win                  &trans  &lt 6 LC(SPACE)  &mt RCTRL LANG1  &trans  &trans  &trans
