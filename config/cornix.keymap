@@ -6,15 +6,6 @@
 
 #include "zmk-helpers/helper.h"
 #include "includes/cornix54.h"
-
-#define BASE 0
-#define WIN 1
-#define IPAD 2
-#define LOWER 3
-#define RAISE 4
-#define ADJUST 5
-#define ASSIST 6
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -28,102 +19,166 @@
         compatible = "zmk,conditional-layers";
 
         adjust_layer {
-            if-layers = <3 4>;
-            then-layer = <5>;
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+
+        adjust_layer-win {
+            if-layers = <5 6>;
+            then-layer = <7>;
         };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        cmd-a {
-            bindings = <&kp LG(A)>;
-            key-positions = <14 15 16>;
-        };
-
-        cmd-z {
-            bindings = <&kp LG(Z)>;
-            key-positions = <26 27>;
-        };
-
-        cmd-x {
-            bindings = <&kp LG(X)>;
-            key-positions = <14 16>;
-        };
-
-        cmd-c {
-            bindings = <&kp LG(C)>;
-            key-positions = <14 15>;
-        };
-
-        cmd-v {
-            bindings = <&kp LG(V)>;
-            key-positions = <15 16>;
-        };
-
-        cmd-w {
-            bindings = <&kp LG(W)>;
-            key-positions = <2 3>;
-        };
-
-        cmd-q {
-            bindings = <&kp LG(Q)>;
-            key-positions = <2 3 4>;
-        };
-
-        l-enter {
-            bindings = <&kp ENTER>;
-            key-positions = <3 4>;
-        };
-
-        ctrl-j {
-            bindings = <&kp LC(J)>;
-            key-positions = <19 20>;
-        };
-
-        ctrl-k {
-            bindings = <&kp LC(K)>;
-            key-positions = <20 21>;
-        };
-
-        ctrl-l {
-            bindings = <&kp LC(L)>;
-            key-positions = <19 20 21>;
-        };
-
-        ctrl-semi {
-            bindings = <&kp LC(SEMI)>;
-            key-positions = <19 21>;
-        };
-
         vol-up {
             bindings = <&kp C_VOL_UP>;
             key-positions = <8 9>;
+            layers = <0 4>;
         };
 
         vol-dn {
             bindings = <&kp C_VOL_DN>;
             key-positions = <7 8>;
+            layers = <0 4>;
         };
 
         vol-mute {
             bindings = <&kp C_MUTE>;
             key-positions = <7 8 9>;
+            layers = <0 4>;
         };
 
         bri-up {
             bindings = <&kp C_BRI_UP>;
             key-positions = <34 35>;
+            layers = <0 4>;
         };
 
         bri-dn {
             bindings = <&kp C_BRI_DN>;
             key-positions = <33 34>;
+            layers = <0 4>;
+        };
+
+        l-enter {
+            bindings = <&kp ENTER>;
+            key-positions = <3 4>;
+            layers = <0 4>;
+        };
+
+        cmd-a {
+            bindings = <&kp LG(A)>;
+            key-positions = <14 15 16>;
+            layers = <0>;
+        };
+
+        cmd-z {
+            bindings = <&kp LG(Z)>;
+            key-positions = <26 27>;
+            layers = <0>;
+        };
+
+        cmd-x {
+            bindings = <&kp LG(X)>;
+            key-positions = <14 16>;
+            layers = <0>;
+        };
+
+        cmd-c {
+            bindings = <&kp LG(C)>;
+            key-positions = <14 15>;
+            layers = <0>;
+        };
+
+        cmd-v {
+            bindings = <&kp LG(V)>;
+            key-positions = <15 16>;
+            layers = <0>;
+        };
+
+        cmd-w {
+            bindings = <&kp LG(W)>;
+            key-positions = <2 3>;
+            layers = <0>;
+        };
+
+        ctrl-a {
+            bindings = <&kp LC(A)>;
+            key-positions = <14 15 16>;
+            layers = <4>;
+        };
+
+        ctrl-z {
+            bindings = <&kp LC(Z)>;
+            key-positions = <26 27>;
+            layers = <4>;
+        };
+
+        ctrl-x {
+            bindings = <&kp LC(X)>;
+            key-positions = <14 16>;
+            layers = <4>;
+        };
+
+        ctrl-c {
+            bindings = <&kp LC(C)>;
+            key-positions = <14 15>;
+            layers = <4>;
+        };
+
+        ctrl-v {
+            bindings = <&kp LC(V)>;
+            key-positions = <15 16>;
+            layers = <4>;
+        };
+
+        ctrl-w {
+            bindings = <&kp LC(W)>;
+            key-positions = <3 2>;
+            layers = <4>;
+        };
+
+        cmd-q {
+            bindings = <&kp LG(Q)>;
+            key-positions = <2 3 4>;
+            layers = <0>;
+        };
+
+        ctrl-j {
+            bindings = <&kp LC(J)>;
+            key-positions = <19 20>;
+            layers = <0>;
+        };
+
+        ctrl-k {
+            bindings = <&kp LC(K)>;
+            key-positions = <20 21>;
+            layers = <0>;
+        };
+
+        ctrl-l {
+            bindings = <&kp LC(L)>;
+            key-positions = <19 20 21>;
+            layers = <0>;
+        };
+
+        ctrl-semi {
+            bindings = <&kp LC(SEMI)>;
+            key-positions = <19 21>;
+            layers = <0>;
         };
 
         gs5-ss {
             bindings = <&kp LS(LG(NUMBER_5))>;
             key-positions = <33 34 35>;
+            layers = <0>;
+        };
+
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <11 10>;
         };
     };
 
@@ -138,33 +193,43 @@
             keep-mods = <(MOD_LGUI)>;
         };
 
-        mm_esc_in: mm_esc_in {
+        mm_esc_s: mm_esc_s {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp TILDE>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "MM_ESC_IN";
+            label = "MM_ESC_S";
         };
 
-        mm_esc: mm_esc {
+        mm_esc_g: mm_esc_g {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mm_esc_in>, <&kp GRAVE>;
+            bindings = <&mm_esc_s>, <&kp GRAVE>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
             keep-mods = <(MOD_LGUI|MOD_RGUI)>;
-            label = "MM_ESC";
+            label = "MM_ESC_G";
         };
 
         mm_gtab: mm_gtab {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_GTAB";
-            bindings = <&lt 4 LG(SPACE)>, <&lt 4 TAB>;
+            bindings = <&lt 2 LG(SPACE)>, <&lt 2 TAB>;
 
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
             keep-mods = <(MOD_LGUI)>;
+        };
+
+        mm_ime_win: mm_ime_win {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_IME_WIN";
+            bindings = <&mt LSHFT SPACE>, <&mt LSHFT SPACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+            keep-mods = <(MOD_LCTL)>;
         };
     };
 
@@ -174,38 +239,10 @@
         base_layer {
             display-name = "Base";
             bindings = <
-&mm_esc        &kp Q                &kp L     &kp U           &kp COMMA   &kp DOT                       &kp F            &kp W     &kp R           &kp Y     &kp P     &kp GRAVE
-&mt LGUI TAB   &kp E                &kp I     &kp A           &kp O       &kp MINUS                     &kp K            &kp T     &kp N           &kp S     &kp H     &kp B
-&mt LALT BSLH  &mt LCTRL SEMICOLON  &kp Z     &kp X           &kp C       &kp V      &none  &kp C_MUTE  &kp G            &kp D     &kp M           &kp J     &kp UP    &mt RALT SLASH
-&mo 6          &kp LCTRL            &kp LALT  &mt LGUI LANG2  &lt 3 BSPC  &mm_ime                       &mt RSHFT ENTER  &mm_gtab  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
-            >;
-
-            sensor-bindings =
-                <&inc_dec_kp C_BRI_UP C_BRI_DN>,
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        win_layer {
-            display-name = "Win";
-            bindings = <
-&mm_esc        &kp Q                &kp L     &kp U           &kp COMMA   &kp DOT                       &kp F            &kp W      &kp R           &kp Y     &kp P     &kp GRAVE
-&mt LGUI TAB   &kp E                &kp I     &kp A           &kp O       &kp MINUS                     &kp K            &kp T      &kp N           &kp S     &kp H     &kp B
-&mt LALT BSLH  &mt LCTRL SEMICOLON  &kp Z     &kp X           &kp C       &kp V      &none  &kp C_MUTE  &kp G            &kp D      &kp M           &kp J     &kp UP    &mt RALT SLASH
-&mo 6          &kp LCTRL            &kp LALT  &mt LGUI LANG2  &lt 3 BSPC  &mm_ime                       &mt RSHFT ENTER  &lt 4 TAB  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
-            >;
-
-            sensor-bindings =
-                <&inc_dec_kp C_BRI_UP C_BRI_DN>,
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        ipad_layer {
-            display-name = "iPad";
-            bindings = <
-&mm_esc        &kp Q                &kp L     &kp U           &kp COMMA   &kp DOT                       &kp F            &kp W      &kp R           &kp Y     &kp P     &kp GRAVE
-&mt LGUI TAB   &kp E                &kp I     &kp A           &kp O       &kp MINUS                     &kp K            &kp T      &kp N           &kp S     &kp H     &kp B
-&mt LALT BSLH  &mt LCTRL SEMICOLON  &kp Z     &kp X           &kp C       &kp V      &none  &kp C_MUTE  &kp G            &kp D      &kp M           &kp J     &kp UP    &mt RALT SLASH
-&mo 6          &kp LCTRL            &kp LALT  &mt LGUI LANG2  &lt 3 BSPC  &mm_ime                       &mt RSHFT ENTER  &lt 4 TAB  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
+&mm_esc_g      &kp Q           &kp L     &kp U           &kp COMMA   &kp DOT                       &kp F            &kp W     &kp R           &kp Y     &kp P     &kp GRAVE
+&mt LGUI TAB   &kp E           &kp I     &kp A           &kp O       &kp MINUS                     &kp K            &kp T     &kp N           &kp S     &kp H     &kp B
+&mt LALT BSLH  &mt LCTRL SEMI  &kp Z     &kp X           &kp C       &kp V      &none  &kp C_MUTE  &kp G            &kp D     &kp M           &kp J     &kp UP    &mt RALT SLASH
+&mo 8          &kp LCTRL       &kp LALT  &mt LGUI LANG2  &lt 1 BSPC  &mm_ime                       &mt RSHFT ENTER  &mm_gtab  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
             sensor-bindings =
@@ -216,37 +253,81 @@
         lower_layer {
             display-name = "Lower";
             bindings = <
-&trans        &kp LS(SEMICOLON)   &kp SLASH     &kp MINUS     &trans        &trans                        &kp F1        &kp F2           &kp F3        &kp F4        &kp F5        &kp F11
-&mt LGUI F16  &kp NUMBER_1        &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7     &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp F12
-&trans        &mt LCTRL NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans  &trans  &kp F6        &kp F7           &kp F8        &kp F9        &kp F10       &trans
-&trans        &trans              &trans        &trans        &trans        &trans                        &trans        &lt 4 RA(SPACE)  &trans        &trans        &trans        &trans
+&trans  &kp LS(SEMICOLON)   &kp SLASH     &kp MINUS     &trans        &trans                        &kp F1        &kp F2           &kp F3        &kp F4        &kp F5        &kp F11
+&trans  &kp NUMBER_1        &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7     &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp F12
+&trans  &mt LCTRL NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans  &trans  &kp F6        &kp F7           &kp F8        &kp F9        &kp F10       &trans
+&trans  &trans              &trans        &trans        &trans        &trans                        &trans        &lt 2 RA(SPACE)  &trans        &trans        &trans        &trans
             >;
         };
 
         raise_layer {
             display-name = "Raise";
             bindings = <
-&trans        &kp LS(NUMBER_6)  &kp LS(NUMBER_5)   &kp LS(NUMBER_4)  &kp LS(COMMA)     &kp LS(DOT)                    &kp LS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp UP    &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp F11
-&mt LGUI F16  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)   &kp LS(NUMBER_3)  &kp LS(EQUAL)     &kp LS(MINUS)                  &kp LS(SEMICOLON)     &kp LEFT          &kp DOWN  &kp RIGHT          &kp EQUAL              &kp SEMICOLON
-&trans        &trans            &kp LS(BACKSLASH)  &kp LS(NUMBER_8)  &kp LS(NUMBER_7)  &kp LS(SLASH)  &trans  &trans  &kp LS(COMMA)         &kp LS(NUMBER_9)  &kp SQT   &kp LS(NUMBER_0)   &kp LS(DOT)            &trans
-&trans        &trans            &trans             &trans            &lt 3 RA(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
+&trans  &kp LS(NUMBER_6)  &kp LS(NUMBER_5)   &kp LS(NUMBER_4)  &kp LS(COMMA)     &kp LS(DOT)                    &kp LS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp UP    &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &trans
+&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)   &kp LS(NUMBER_3)  &kp LS(EQUAL)     &kp LS(MINUS)                  &kp LS(SEMICOLON)     &kp LEFT          &kp DOWN  &kp RIGHT          &kp EQUAL              &kp SEMICOLON
+&trans  &trans            &kp LS(BACKSLASH)  &kp LS(NUMBER_8)  &kp LS(NUMBER_7)  &kp LS(SLASH)  &trans  &trans  &kp LS(COMMA)         &kp LS(NUMBER_9)  &kp SQT   &kp LS(NUMBER_0)   &kp LS(DOT)            &trans
+&trans  &trans            &trans             &trans            &lt 1 RA(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
             >;
         };
 
         adjust_layer {
             display-name = "Adjust";
             bindings = <
-&none  &none  &none  &none  &none  &none                &none  &none          &none  &none           &none  &none
-&none  &none  &none  &none  &none  &none                &none  &none          &none  &none           &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &kp LS(COMMA)  &none  &kp LS(PERIOD)  &none  &none
-&none  &none  &none  &none  &none  &none                &none  &none          &none  &none           &none  &none
+&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
+            >;
+        };
+
+        base_layer-win {
+            display-name = "Base-WIN";
+            bindings = <
+&mm_esc_s      &trans         &trans    &trans          &trans      &trans                       &trans  &trans           &trans           &trans  &trans  &trans
+&mt LCTRL TAB  &trans         &trans    &trans          &trans      &trans                       &trans  &trans           &trans           &trans  &trans  &trans
+&trans         &mt LGUI SEMI  &trans    &trans          &trans      &trans       &trans  &trans  &trans  &trans           &trans           &trans  &trans  &trans
+&trans         &trans         &kp LGUI  &mt LALT LANG2  &lt 5 BSPC  &mm_ime_win                  &trans  &lt 6 LC(SPACE)  &mt RCTRL LANG1  &trans  &trans  &trans
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_BRI_UP C_BRI_DN>,
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        lower_layer-win {
+            display-name = "Lower-WIN";
+            bindings = <
+&trans  &kp LS(SEMICOLON)  &kp SLASH     &kp MINUS     &trans        &trans                        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F11
+&trans  &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp F12
+&trans  &mt LGUI NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans  &trans  &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &trans
+&trans  &trans             &trans        &trans        &trans        &trans                        &trans        &lt 6 RGUI    &trans        &trans        &trans        &trans
+            >;
+        };
+
+        raise_layer-win {
+            display-name = "Raise-WIN";
+            bindings = <
+&trans  &kp LS(NUMBER_6)  &kp LS(NUMBER_5)   &kp LS(NUMBER_4)  &kp LS(COMMA)     &kp LS(DOT)                    &kp LS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp UP    &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &trans
+&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)   &kp LS(NUMBER_3)  &kp LS(EQUAL)     &kp LS(MINUS)                  &kp LS(SEMICOLON)     &kp LEFT          &kp DOWN  &kp RIGHT          &kp EQUAL              &kp SEMICOLON
+&trans  &trans            &kp LS(BACKSLASH)  &kp LS(NUMBER_8)  &kp LS(NUMBER_7)  &kp LS(SLASH)  &trans  &trans  &kp LS(COMMA)         &kp LS(NUMBER_9)  &kp SQT   &kp LS(NUMBER_0)   &kp LS(DOT)            &trans
+&trans  &trans            &trans             &trans            &lt 5 RC(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
+            >;
+        };
+
+        adjust_layer-win {
+            display-name = "Adjust-WIN";
+            bindings = <
+&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
             >;
         };
 
         assist_layer {
             display-name = "Assist";
             bindings = <
-&kp LG(LC(Q))  &none  &none  &none  &none  &none                &none          &none          &none          &none          &none          &bt BT_CLR
+&kp LG(LC(Q))  &none  &none  &none  &none  &none                &none          &to 0          &none          &to 4          &none          &bt BT_CLR
 &none          &none  &none  &none  &none  &none                &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &none
 &none          &none  &none  &none  &none  &none  &none  &none  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &none
 &none          &none  &none  &none  &none  &none                &none          &none          &none          &none          &none          &bt BT_CLR_ALL
