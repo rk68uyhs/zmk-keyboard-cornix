@@ -239,10 +239,10 @@
         base_layer {
             display-name = "Base";
             bindings = <
-&mm_esc_g      &kp Q           &kp L     &kp U           &kp COMMA   &kp DOT                       &kp F            &kp W     &kp R           &kp Y     &kp P     &kp GRAVE
-&mt LGUI TAB   &kp E           &kp I     &kp A           &kp O       &kp MINUS                     &kp K            &kp T     &kp N           &kp S     &kp H     &kp B
-&mt LALT BSLH  &mt LCTRL SEMI  &kp Z     &kp X           &kp C       &kp V      &none  &kp C_MUTE  &kp G            &kp D     &kp M           &kp J     &kp UP    &mt RALT SLASH
-&mo 8          &kp LCTRL       &kp LALT  &mt LGUI LANG2  &lt 1 BSPC  &mm_ime                       &mt RSHFT ENTER  &mm_gtab  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
+&mm_esc_g      &kp Q           &kp L     &kp U           &kp COMMA   &kp DOT                                &kp F            &kp W      &kp R           &kp Y     &kp P     &kp GRAVE
+&mt LGUI TAB   &kp E           &kp I     &kp A           &kp O       &kp MINUS                              &kp K            &kp T      &kp N           &kp S     &kp H     &kp B
+&mt LALT BSLH  &mt LCTRL SEMI  &kp Z     &kp X           &kp C       &kp V      &kp LS(LG(N5))  &kp C_MUTE  &kp G            &kp D      &kp M           &kp J     &kp UP    &mt RALT SLASH
+&mo 8          &kp LCTRL       &kp LALT  &mt LGUI LANG2  &lt 1 BSPC  &mm_ime                                &mt RSHFT ENTER  &lt 2 TAB  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
             sensor-bindings =
@@ -263,7 +263,7 @@
         raise_layer {
             display-name = "Raise";
             bindings = <
-&trans  &kp LS(NUMBER_6)  &kp LS(NUMBER_5)   &kp LS(NUMBER_4)  &kp LS(COMMA)     &kp LS(DOT)                    &kp LS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp UP    &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &trans
+&trans  &kp LS(NUMBER_6)  &kp LS(NUMBER_5)   &kp LS(NUMBER_4)  &kp LS(COMMA)     &kp LS(DOT)                    &kp LS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp UP    &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp CAPSLOCK
 &trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)   &kp LS(NUMBER_3)  &kp LS(EQUAL)     &kp LS(MINUS)                  &kp LS(SEMICOLON)     &kp LEFT          &kp DOWN  &kp RIGHT          &kp EQUAL              &kp SEMICOLON
 &trans  &trans            &kp LS(BACKSLASH)  &kp LS(NUMBER_8)  &kp LS(NUMBER_7)  &kp LS(SLASH)  &trans  &trans  &kp LS(COMMA)         &kp LS(NUMBER_9)  &kp SQT   &kp LS(NUMBER_0)   &kp LS(DOT)            &trans
 &trans  &trans            &trans             &trans            &lt 1 RA(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
@@ -283,10 +283,10 @@
         base_layer-win {
             display-name = "Base-WIN";
             bindings = <
-&mm_esc_s      &trans         &trans    &trans          &trans      &trans                       &trans  &trans           &trans           &trans  &trans  &trans
-&mt LCTRL TAB  &trans         &trans    &trans          &trans      &trans                       &trans  &trans           &trans           &trans  &trans  &trans
-&trans         &mt LGUI SEMI  &trans    &trans          &trans      &trans       &trans  &trans  &trans  &trans           &trans           &trans  &trans  &trans
-&trans         &trans         &kp LGUI  &mt LALT LANG2  &lt 5 BSPC  &mm_ime_win                  &trans  &lt 6 LC(SPACE)  &mt RCTRL LANG1  &trans  &trans  &trans
+&mm_esc_s      &trans         &trans    &trans          &trans      &trans                       &trans  &trans     &trans           &trans  &trans  &trans
+&mt LCTRL TAB  &trans         &trans    &trans          &trans      &trans                       &trans  &trans     &trans           &trans  &trans  &trans
+&trans         &mt LGUI SEMI  &trans    &trans          &trans      &trans       &trans  &trans  &trans  &trans     &trans           &trans  &trans  &trans
+&trans         &trans         &kp LGUI  &mt LALT LANG2  &lt 5 BSPC  &mm_ime_win                  &trans  &lt 6 TAB  &mt RCTRL LANG1  &trans  &trans  &trans
             >;
 
             sensor-bindings =
@@ -307,7 +307,7 @@
         raise_layer-win {
             display-name = "Raise-WIN";
             bindings = <
-&trans  &kp LS(NUMBER_6)  &kp LS(NUMBER_5)   &kp LS(NUMBER_4)  &kp LS(COMMA)     &kp LS(DOT)                    &kp LS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp UP    &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &trans
+&trans  &kp LS(NUMBER_6)  &kp LS(NUMBER_5)   &kp LS(NUMBER_4)  &kp LS(COMMA)     &kp LS(DOT)                    &kp LS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp UP    &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp LC(SPACE)
 &trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)   &kp LS(NUMBER_3)  &kp LS(EQUAL)     &kp LS(MINUS)                  &kp LS(SEMICOLON)     &kp LEFT          &kp DOWN  &kp RIGHT          &kp EQUAL              &kp SEMICOLON
 &trans  &trans            &kp LS(BACKSLASH)  &kp LS(NUMBER_8)  &kp LS(NUMBER_7)  &kp LS(SLASH)  &trans  &trans  &kp LS(COMMA)         &kp LS(NUMBER_9)  &kp SQT   &kp LS(NUMBER_0)   &kp LS(DOT)            &trans
 &trans  &trans            &trans             &trans            &lt 5 RC(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
