@@ -283,10 +283,10 @@
         base_layer-win {
             display-name = "Base-WIN";
             bindings = <
-&mm_esc_s      &trans         &trans    &trans          &trans      &trans                       &trans  &trans     &trans           &trans  &trans  &trans
-&mt LCTRL TAB  &trans         &trans    &trans          &trans      &trans                       &trans  &trans     &trans           &trans  &trans  &trans
-&trans         &mt LGUI SEMI  &trans    &trans          &trans      &trans       &trans  &trans  &trans  &trans     &trans           &trans  &trans  &trans
-&trans         &trans         &kp LGUI  &mt LALT LANG2  &lt 5 BSPC  &mm_ime_win                  &trans  &lt 6 TAB  &mt RCTRL LANG1  &trans  &trans  &trans
+&mm_esc_s      &trans         &trans    &trans          &trans      &trans                              &trans  &trans     &trans           &trans  &trans  &trans
+&mt LCTRL TAB  &trans         &trans    &trans          &trans      &trans                              &trans  &trans     &trans           &trans  &trans  &trans
+&trans         &mt LGUI SEMI  &trans    &trans          &trans      &trans       &kp LG(LS(S))  &trans  &trans  &trans     &trans           &trans  &trans  &trans
+&trans         &trans         &kp LGUI  &mt LALT LANG2  &lt 5 BSPC  &mm_ime_win                         &trans  &lt 6 TAB  &mt RCTRL LANG1  &trans  &trans  &trans
             >;
 
             sensor-bindings =
