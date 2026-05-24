@@ -24,8 +24,8 @@
         };
 
         adjust_layer-win {
-            if-layers = <5 6>;
-            then-layer = <7>;
+            if-layers = <6 7>;
+            then-layer = <8>;
         };
     };
 
@@ -35,37 +35,37 @@
         vol-up {
             bindings = <&kp C_VOL_UP>;
             key-positions = <8 9>;
-            layers = <0 4>;
+            layers = <0 5>;
         };
 
         vol-dn {
             bindings = <&kp C_VOL_DN>;
             key-positions = <7 8>;
-            layers = <0 4>;
+            layers = <0 5>;
         };
 
         vol-mute {
             bindings = <&kp C_MUTE>;
             key-positions = <7 8 9>;
-            layers = <0 4>;
+            layers = <0 5>;
         };
 
         bri-up {
             bindings = <&kp C_BRI_UP>;
             key-positions = <34 35>;
-            layers = <0 4>;
+            layers = <0 5>;
         };
 
         bri-dn {
             bindings = <&kp C_BRI_DN>;
             key-positions = <33 34>;
-            layers = <0 4>;
+            layers = <0 5>;
         };
 
         l-enter {
             bindings = <&kp ENTER>;
             key-positions = <3 4>;
-            layers = <0 4>;
+            layers = <0 5>;
         };
 
         cmd-a {
@@ -107,37 +107,37 @@
         ctrl-a {
             bindings = <&kp LC(A)>;
             key-positions = <14 15 16>;
-            layers = <4>;
+            layers = <5>;
         };
 
         ctrl-z {
             bindings = <&kp LC(Z)>;
             key-positions = <26 27>;
-            layers = <4>;
+            layers = <5>;
         };
 
         ctrl-x {
             bindings = <&kp LC(X)>;
             key-positions = <14 16>;
-            layers = <4>;
+            layers = <5>;
         };
 
         ctrl-c {
             bindings = <&kp LC(C)>;
             key-positions = <14 15>;
-            layers = <4>;
+            layers = <5>;
         };
 
         ctrl-v {
             bindings = <&kp LC(V)>;
             key-positions = <15 16>;
-            layers = <4>;
+            layers = <5>;
         };
 
         ctrl-w {
             bindings = <&kp LC(W)>;
             key-positions = <3 2>;
-            layers = <4>;
+            layers = <5>;
         };
 
         cmd-q {
@@ -242,7 +242,7 @@
 &mm_esc_g      &kp Q           &kp L     &kp U           &kp COMMA   &kp DOT                                &kp F            &kp W      &kp R           &kp Y     &kp P     &kp GRAVE
 &mt LGUI TAB   &kp E           &kp I     &kp A           &kp O       &kp MINUS                              &kp K            &kp T      &kp N           &kp S     &kp H     &kp B
 &mt LALT BSLH  &mt LCTRL SEMI  &kp Z     &kp X           &kp C       &kp V      &kp LS(LG(N5))  &kp C_MUTE  &kp G            &kp D      &kp M           &kp J     &kp UP    &mt RALT SLASH
-&mo 8          &kp LCTRL       &kp LALT  &mt LGUI LANG2  &lt 1 BSPC  &mm_ime                                &mt RSHFT ENTER  &lt 2 TAB  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
+&mo 4          &kp LCTRL       &kp LALT  &mt LGUI LANG2  &lt 1 BSPC  &mm_ime                                &mt RSHFT ENTER  &lt 2 TAB  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
             sensor-bindings =
@@ -280,13 +280,23 @@
             >;
         };
 
+        assist_layer {
+            display-name = "Assist";
+            bindings = <
+&kp LG(LC(Q))  &none  &none  &none  &none  &none                &none          &to 0          &none          &to 5          &none          &bt BT_CLR
+&none          &none  &none  &none  &none  &none                &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &none
+&none          &none  &none  &none  &none  &none  &none  &none  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &none
+&none          &none  &none  &none  &none  &none                &none          &none          &none          &none          &none          &bt BT_CLR_ALL
+            >;
+        };
+
         base_layer-win {
             display-name = "Base-WIN";
             bindings = <
 &mm_esc_s      &trans         &trans    &trans          &trans      &trans                              &trans  &trans     &trans           &trans  &trans  &trans
 &mt LCTRL TAB  &trans         &trans    &trans          &trans      &trans                              &trans  &trans     &trans           &trans  &trans  &trans
 &trans         &mt LGUI SEMI  &trans    &trans          &trans      &trans       &kp LG(LS(S))  &trans  &trans  &trans     &trans           &trans  &trans  &trans
-&trans         &trans         &kp LGUI  &mt LALT LANG2  &lt 5 BSPC  &mm_ime_win                         &trans  &lt 6 TAB  &mt RCTRL LANG1  &trans  &trans  &trans
+&mo 9          &trans         &kp LGUI  &mt LALT LANG2  &lt 6 BSPC  &mm_ime_win                         &trans  &lt 7 TAB  &mt RCTRL LANG1  &trans  &trans  &trans
             >;
 
             sensor-bindings =
@@ -300,7 +310,7 @@
 &trans  &kp LS(SEMICOLON)  &kp SLASH     &kp MINUS     &trans        &trans                        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F11
 &trans  &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp F12
 &trans  &mt LGUI NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans  &trans  &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &trans
-&trans  &trans             &trans        &trans        &trans        &trans                        &trans        &lt 6 RGUI    &trans        &trans        &trans        &trans
+&trans  &trans             &trans        &trans        &trans        &trans                        &trans        &lt 7 RGUI    &trans        &trans        &trans        &trans
             >;
         };
 
@@ -310,7 +320,7 @@
 &trans  &kp LS(NUMBER_6)  &kp LS(NUMBER_5)   &kp LS(NUMBER_4)  &kp LS(COMMA)     &kp LS(DOT)                    &kp LS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp UP    &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp LC(SPACE)
 &trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)   &kp LS(NUMBER_3)  &kp LS(EQUAL)     &kp LS(MINUS)                  &kp LS(SEMICOLON)     &kp LEFT          &kp DOWN  &kp RIGHT          &kp EQUAL              &kp SEMICOLON
 &trans  &trans            &kp LS(BACKSLASH)  &kp LS(NUMBER_8)  &kp LS(NUMBER_7)  &kp LS(SLASH)  &trans  &trans  &kp LS(COMMA)         &kp LS(NUMBER_9)  &kp SQT   &kp LS(NUMBER_0)   &kp LS(DOT)            &trans
-&trans  &trans            &trans             &trans            &lt 5 RC(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
+&trans  &trans            &trans             &trans            &lt 6 RC(BSPC)    &trans                         &trans                &trans            &trans    &none              &none                  &none
             >;
         };
 
@@ -324,13 +334,13 @@
             >;
         };
 
-        assist_layer {
-            display-name = "Assist";
+        assist_layer-win {
+            display-name = "Assist-WIN";
             bindings = <
-&kp LG(LC(Q))  &none  &none  &none  &none  &none                &none          &to 0          &none          &to 4          &none          &bt BT_CLR
-&none          &none  &none  &none  &none  &none                &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &none
-&none          &none  &none  &none  &none  &none  &none  &none  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &none
-&none          &none  &none  &none  &none  &none                &none          &none          &none          &none          &none          &bt BT_CLR_ALL
+&kp LG(L)  &none  &none  &none  &none  &none                &none          &to 0          &none          &to 5          &none          &bt BT_CLR
+&none      &none  &none  &none  &none  &none                &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &none
+&none      &none  &none  &none  &none  &none  &none  &none  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &none
+&none      &none  &none  &none  &none  &none                &none          &none          &none          &none          &none          &bt BT_CLR_ALL
             >;
         };
     };
