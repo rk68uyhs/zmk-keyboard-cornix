@@ -1,0 +1,13 @@
+services:
+  zmk:
+    image: zmkfirmware/zmk-build-arm:stable
+    container_name: zmk-builder
+    volumes:
+      - .:/config-repo
+      # ZMKのソースコード群をDocker内部に永続化して保持する
+      - zmk-cache:/zmk-workspace
+    command: tail -f /dev/null
+
+# ボリュームの定義を追加
+volumes:
+  zmk-cache:
