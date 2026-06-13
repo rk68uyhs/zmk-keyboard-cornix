@@ -22,11 +22,6 @@
             if-layers = <1 2>;
             then-layer = <3>;
         };
-
-        adjust_layer-win {
-            if-layers = <5 5>;
-            then-layer = <5>;
-        };
     };
 
     combos {
@@ -102,36 +97,6 @@
             bindings = <&kp LG(W)>;
             key-positions = <2 3>;
             layers = <0>;
-        };
-
-        ctrl-a {
-            bindings = <&kp LC(A)>;
-            key-positions = <14 15 16>;
-        };
-
-        ctrl-z {
-            bindings = <&kp LC(Z)>;
-            key-positions = <26 27>;
-        };
-
-        ctrl-x {
-            bindings = <&kp LC(X)>;
-            key-positions = <14 16>;
-        };
-
-        ctrl-c {
-            bindings = <&kp LC(C)>;
-            key-positions = <14 15>;
-        };
-
-        ctrl-v {
-            bindings = <&kp LC(V)>;
-            key-positions = <15 16>;
-        };
-
-        ctrl-w {
-            bindings = <&kp LC(W)>;
-            key-positions = <3 2>;
         };
 
         cmd-q {
