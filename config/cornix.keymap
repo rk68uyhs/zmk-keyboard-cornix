@@ -170,26 +170,6 @@
             keep-mods = <(MOD_LGUI|MOD_RGUI)>;
             label = "MM_ESC_G";
         };
-
-        mm_gtab: mm_gtab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_GTAB";
-            bindings = <&lt 2 LG(SPACE)>, <&lt 2 TAB>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-            keep-mods = <(MOD_LGUI)>;
-        };
-
-        mm_ime_win: mm_ime_win {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_IME_WIN";
-            bindings = <&mt LSHFT SPACE>, <&mt LSHFT SPACE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
-            keep-mods = <(MOD_LCTL)>;
-        };
     };
 
     keymap {
