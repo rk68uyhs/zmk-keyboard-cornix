@@ -27,36 +27,6 @@
     combos {
         compatible = "zmk,combos";
 
-        vol-up {
-            bindings = <&kp C_VOL_UP>;
-            key-positions = <8 9>;
-            layers = <0>;
-        };
-
-        vol-dn {
-            bindings = <&kp C_VOL_DN>;
-            key-positions = <7 8>;
-            layers = <0>;
-        };
-
-        vol-mute {
-            bindings = <&kp C_MUTE>;
-            key-positions = <7 8 9>;
-            layers = <0>;
-        };
-
-        bri-up {
-            bindings = <&kp C_BRI_UP>;
-            key-positions = <34 35>;
-            layers = <0>;
-        };
-
-        bri-dn {
-            bindings = <&kp C_BRI_DN>;
-            key-positions = <33 34>;
-            layers = <0>;
-        };
-
         l-enter {
             bindings = <&kp ENTER>;
             key-positions = <3 4>;
@@ -129,12 +99,6 @@
             layers = <0>;
         };
 
-        gs5-ss {
-            bindings = <&kp LS(LG(NUMBER_5))>;
-            key-positions = <33 34 35>;
-            layers = <0>;
-        };
-
         del {
             bindings = <&kp DEL>;
             key-positions = <11 10>;
@@ -178,10 +142,10 @@
         base_layer {
             display-name = "Base";
             bindings = <
-&mm_esc_g      &kp Q           &kp L     &kp U           &kp COMMA   &kp DOT                                &kp F            &kp W      &kp R           &kp Y     &kp P     &kp GRAVE
-&mt LGUI TAB   &kp E           &kp I     &kp A           &kp O       &kp MINUS                              &kp K            &kp T      &kp N           &kp S     &kp H     &kp B
-&mt LALT BSLH  &mt LCTRL SEMI  &kp Z     &kp X           &kp C       &kp V      &kp LS(LG(N5))  &kp C_MUTE  &kp G            &kp D      &kp M           &kp J     &kp UP    &mt RALT SLASH
-&mo 4          &kp LCTRL       &kp LALT  &mt LGUI LANG2  &lt 1 BSPC  &mm_ime                                &mt RSHFT ENTER  &lt 2 TAB  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
+&mm_esc_g      &kp Q           &kp L     &kp U           &kp COMMA   &kp DOT                                &kp F            &kp W        &kp R           &kp Y     &kp P     &kp GRAVE
+&mt LGUI TAB   &kp E           &kp I     &kp A           &kp O       &kp MINUS                              &kp K            &kp T        &kp N           &kp S     &kp H     &kp B
+&mt LALT BSLH  &mt LCTRL SEMI  &kp Z     &kp X           &kp C       &kp V      &kp LS(LG(N5))  &kp C_MUTE  &kp G            &kp D        &kp M           &kp J     &kp UP    &mt RALT SLASH
+&mo 4          &kp LCTRL       &kp LALT  &mt LGUI LANG2  &lt 1 BSPC  &mm_ime                                &mt RSHFT SPACE  &lt 2 ENTER  &mt RGUI LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
             sensor-bindings =
